@@ -19,4 +19,5 @@ Install requirements needed from each folders
   * Expand Cookies under the Storage section on the sidebar
   * Click on 'https://www.notion.so' to view all the cookies
   * Copy the value for the key 'token_v2'
-
+- img-date-reset:
+  > date_reset.py [foler path]
