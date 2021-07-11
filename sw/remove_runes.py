@@ -15,6 +15,6 @@ with os.scandir(path) as runes:
 				print(rune.name)
 				count += 1
 				os.remove(path + rune.name)
-	print(count)
+	print("Deleted " + str(count)+ " runes" )
 
 
