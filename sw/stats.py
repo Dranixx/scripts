@@ -15,7 +15,7 @@ for s in status:
 			if not rune.is_file():
 				continue
 			for i in range(1, len(sys.argv)):
-				if sys.argv[i] not in rune.name:
+				if sys.argv[i].lower() not in rune.name.lower():
 					check &= False
 			if check:
 				print(rune.name)
