@@ -1,23 +1,33 @@
+import argparse
 import os
-import sys
+import re
 
 
 path = "C:/Users/Alexandre/AppData/Local/S2US/Screenshots/Runes/"
 status = ["GOT", "SOLD"]
 
-for s in status:
-	count = 0
-	check = True
-	with os.scandir(path + s) as runes:
-		print(s + " runes:")
-		for rune in runes:
-			check = True
-			if not rune.is_file():
-				continue
-			for i in range(1, len(sys.argv)):
-				if sys.argv[i].lower() not in rune.name.lower():
-					check &= False
-			if check:
-				print(rune.name)
-				count += 1
-	print (count)
+def main():
+	parser = argparse.ArgumentParser(description='TODO...')
+
+	parser.add_argument('query', type=str, help="regex query")
+	parser.add_argument('-v', '--verbose', action='store_true', help="print every rune name")
+
+	args = parser.parse_args()
+
+	for s in status:
+		count = 0
+		with os.scandir(path + s) as runes:
+			print(s + " runes:")
+			for rune in runes:
+				if not rune.is_file():
+					continue
+				if re.search(args.query, rune.name):
+					if args.verbose:
+						print(rune.name)
+					count += 1
+		print (count)
+
+
+
+if __name__ == "__main__":
+	main()
