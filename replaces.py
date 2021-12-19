@@ -8,7 +8,8 @@ to_replace = {
     "of A ": "ofa"
 }
 
-path = 'C:/Users/Alexandre/Desktop/Genshin tools/GenshinData/material_GOOD_2021_12_19_21_28.json'
+path = input("Path of filename: ")
+
 # Read
 fin = open(path, "rt")
 data = fin.read()
