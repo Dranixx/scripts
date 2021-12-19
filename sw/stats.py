@@ -7,7 +7,7 @@ path = "C:/Users/Alexandre/AppData/Local/S2US/Screenshots/Runes/"
 status = ["GOT", "SOLD"]
 
 def main():
-	parser = argparse.ArgumentParser(description='TODO...')
+	parser = argparse.ArgumentParser(description='This program show some stats about my dropped runes.')
 
 	parser.add_argument('query', type=str, help="regex query")
 	parser.add_argument('-v', '--verbose', action='store_true', help="print every rune name")
